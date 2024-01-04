@@ -1,6 +1,12 @@
 import streamlit as st
 import pandas as pd
 
+st.set_page_config(
+    initial_sidebar_state="collapsed"
+    ,page_title="Lucky Draw"
+    ,page_icon= ":slot_machine::"
+    ,layout="centered")
+
 st.header('Lucky Draw')
 list_sdt = ['0961748061','0961748062','0961748063','0961748064','0961748065','0961748066','0961748067','0961748068','0961748069','0961748060']
 list_number = [10,9,8,7,6,5,4,3,2,1]
@@ -17,12 +23,6 @@ elif submit and len(filtered_df)==0:
     st.error("Sdt không nằm trong danh sách",icon='🚨')
 else:
     pass
-
-st.set_page_config(
-    initial_sidebar_state="collapsed"
-    ,page_title="Lucky Draw"
-    ,page_icon= ":slot_machine::"
-    ,layout="centered")
 sidebar_collapsed ="""
     <style>
         [data-testid="collapsedControl"] {display: none}
