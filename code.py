@@ -38,3 +38,14 @@ hide_streamlit_style ="""
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: url("https://i.ibb.co/C6rKrbk/FB-IMG-1703430257016.jpg");
+    }
+   </style>
+    """,
+    unsafe_allow_html=True
+)
