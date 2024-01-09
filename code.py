@@ -8,7 +8,7 @@ st.set_page_config(
     ,layout="centered")
 st.header('Lucky Draw')
 url = r'https://docs.google.com/spreadsheets/d/e/2PACX-1vSvbcJfhWi9yeviKzvF4HzNXTqggyMfXrQDiFEIf_eaAarC5q6IvVA_NHHQpS367irp7Wk1NW5X-9ak/pub?output=xlsx'
-df=pd.read_excel(url,sheet_name='Sheet1',dtype={'Sdt':str,'Số may mắn':int})
+df=pd.read_excel(url,sheet_name='Sheet1',dtype={'sdt':str,'luckynumber':int})
 with st.form("Lucky Draw"):
     sdt_input = st.text_input("Nhập số điện thoại của bạn")
     filtered_df = df[(df['sdt'] == sdt_input)]
@@ -35,14 +35,3 @@ hide_streamlit_style ="""
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
-st.markdown(
-    """
-    <style>
-    .reportview-container {
-        background: url("https://i.ibb.co/C6rKrbk/FB-IMG-1703430257016.jpg");
-    }
-   </style>
-    """,
-    unsafe_allow_html=True
-)
