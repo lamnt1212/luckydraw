@@ -6,12 +6,9 @@ st.set_page_config(
     ,page_title="Lucky Draw"
     ,page_icon= ":slot_machine::"
     ,layout="centered")
-
 st.header('Lucky Draw')
-list_sdt = ['0961748061','0961748062','0961748063','0961748064','0961748065','0961748066','0961748067','0961748068','0961748069','0961748060']
-list_number = [10,9,8,7,6,5,4,3,2,1]
-list_ds = {'sdt':list_sdt,'luckynumber':list_number}
-df = pd.DataFrame.from_dict(list_ds)
+url = r'https://docs.google.com/spreadsheets/d/e/2PACX-1vSvbcJfhWi9yeviKzvF4HzNXTqggyMfXrQDiFEIf_eaAarC5q6IvVA_NHHQpS367irp7Wk1NW5X-9ak/pub?output=xlsx'
+df=pd.read_excel(url,sheet_name='Sheet1',dtype={'Sdt':str,'Số may mắn':int})
 with st.form("Lucky Draw"):
     sdt_input = st.text_input("Nhập số điện thoại của bạn")
     filtered_df = df[(df['sdt'] == sdt_input)]
